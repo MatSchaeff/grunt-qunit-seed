@@ -11,6 +11,6 @@
     "grunt-cli": "^0.1.13"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt"
   }
 }
