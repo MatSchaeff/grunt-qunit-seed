@@ -1,19 +1,8 @@
-(function() {
-    module("test module", {
-        setup: function () {
-        },
-        teardown: function () {
-        }
+QUnit.test("should get a nextprot valid id", function (assert) {
+    var done = assert.async();
+    $.getJSON("https://api.nextprot.org/entry/NX_P01308/overview.json", function( data ) {
+        console.log(data);
+        assert.equal("NX_P01308", data.entry.uniqueName, 'expect 18 properties');
+        done();
     });
-
-    test("a test", function () {
-        var val = true;
-        strictEqual(true, val, 'true is true');
-    });
-
-    test("a second test", function () {
-        var val = false;
-        strictEqual(false, val, 'false is false, which is true');
-    });
-})();
-
+});
