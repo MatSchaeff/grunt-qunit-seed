@@ -1,4 +1,8 @@
-QUnit.test("should get a nextprot valid id", function (assert) {
+QUnit.test('assertions', function(assert) {
+    assert.ok(1 == 1, 'one equals one');
+});
+
+ QUnit.test("should get a nextprot valid id", function (assert) {
     var done = assert.async();
     $.getJSON("https://api.nextprot.org/entry/NX_P01308/overview.json", function( data ) {
         console.log(data);
@@ -9,6 +13,3 @@ QUnit.test("should get a nextprot valid id", function (assert) {
         done();
     });
 });
-//QUnit.test('assertions', function(assert) {
-//    assert.ok(1 == 1, 'one equals one');
-//});
