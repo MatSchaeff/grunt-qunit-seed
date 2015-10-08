@@ -1,10 +1,23 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        //qunit: {
+        //    all: {
+        //        options: {
+        //            timeout: 10000,
+        //            console: true,
+        //            urls: [
+        //                'http://localhost:8000/tests/test.html'
+        //            ]
+        //        }
+        //    }
+        //},
         qunit: {
+            all: 'tests/test.html',
             options: {
-                timeout: 10000
-            },
-            all: ['tests/**/*.html']
+                timeout: 80000,
+                console: true
+            }
         },
         watch: {
             scripts: {
