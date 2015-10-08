@@ -1,6 +1,9 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         qunit: {
+            options: {
+                timeout: 10000
+            },
             all: ['tests/**/*.html']
         },
         watch: {
