@@ -2,15 +2,14 @@ QUnit.test('assertions', function (assert) {
     assert.ok(1 == 1, 'one equals one');
 });
 
-jQuery.support.cors = true;
+//jQuery.support.cors = true;
 QUnit.test("should get a nextprot valid id", function (assert) {
     var done = assert.async();
     console.log("begin async");
     $.ajax({
-        url: 'https://api.nextprot.org/entry/NX_P01308/overview',
+        url: 'https://api.nextprot.org/entry/NX_P01308/overview.json',
         async: true,
         timeout: 20000,
-        //type: "GET",
         dataType: "json",
         success: function (data) {
             console.log(data);
