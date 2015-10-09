@@ -1,13 +1,28 @@
-QUnit.test('assertions', function(assert) {
+QUnit.test('assertions', function (assert) {
     assert.ok(1 == 1, 'one equals one');
 });
- QUnit.test("should get a nextprot valid id", function (assert) {
+//QUnit.test("should get a nextprot valid id", function (assert) {
+//    var done = assert.async();
+//    console.log("begin async");
+//    $.getJSON("overview.json", function (data) {
+//        console.log("entering the json");
+//        console.log(data);
+//        assert.equal("NX_P01308", data.entry.uniqueName, 'expect 18 properties');
+//        done();
+//    }, function (error) {
+//        console.log("error");
+//        console.log(error);
+//        assert.notOk("failed to load...");
+//        done();
+//    });
+//});
+QUnit.test("should get a nextprot valid id", function (assert) {
     var done = assert.async();
-     console.log("begin async");
-    $.getJSON("overview.json", function( data ) {
+    console.log("begin async");
+    $.getJSON("https://api.nextprot.org/sparql-prefixes.json", function (data) {
         console.log("entering the json");
         console.log(data);
-        assert.equal("NX_P01308", data.entry.uniqueName, 'expect 18 properties');
+        assert.equal("PREFIX : <http://nextprot.org/rdf#>", data[0], 'expect 18 properties');
         done();
     }, function (error) {
         console.log("error");
