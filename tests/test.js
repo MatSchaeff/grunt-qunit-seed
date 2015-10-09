@@ -5,16 +5,23 @@ QUnit.test('assertions', function (assert) {
 QUnit.test("should get a nextprot valid id", function (assert) {
     var done = assert.async();
     console.log("begin async");
+    jQuery.support.cors = true;
     $.ajax({
         url: 'https://api.nextprot.org/entry/NX_P01308/overview.json',
         async: true,
         cache:false,
+        timeout: 10000,
+        data:{},
         success: function (data) {
             console.log(data);
             assert.equal("NX_P01308", data.entry.uniqueName, 'expect 18 properties');
             done();
 
             // doing rest of stuff
+        },
+        error: function(jqXHR, textStatus, ex) {
+            console.log("Error spotted");
+            console.log(textStatus + "," + ex + "," + jqXHR.responseText);
         }
     });
 });
