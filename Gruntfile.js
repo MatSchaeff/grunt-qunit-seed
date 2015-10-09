@@ -15,7 +15,7 @@ module.exports = function (grunt) {
         qunit: {
             all: {
                 options: {
-                    '--web-security': false,
+                    //'--web-security': false,
                     timeout: 8000,
                     console: true,
                     urls: [
