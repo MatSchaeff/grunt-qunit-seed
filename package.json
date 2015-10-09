@@ -5,6 +5,7 @@
     "grunt": "~0.4.2",
     "grunt-contrib-qunit": "~0.3.0",
     "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "x.x.x",
     "grunt-notify": "~0.2.17"
   },
   "dependencies": {

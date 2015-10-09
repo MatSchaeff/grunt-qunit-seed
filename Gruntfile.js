@@ -13,12 +13,16 @@ module.exports = function (grunt) {
         //    }
         //},
         qunit: {
-            options: {
-                '--web-security': false,
-                timeout: 8000,
-                console: true
-            },
-            all: ['tests/test.html']
+            all: {
+                options: {
+                    '--web-security': false,
+                    timeout: 8000,
+                    console: true,
+                    urls: [
+                        'http://localhost:8000/tests/test.html'
+                    ]
+                }
+            }
         },
         watch: {
             scripts: {
@@ -28,15 +32,27 @@ module.exports = function (grunt) {
                     spawn: false
                 }
             }
+        },
+        connect: {
+            server: {
+                options: {
+                    port: 8000,
+                    base: '.'
+                }
+            }
         }
     });
 
 
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+
+// A convenient task alias.
     grunt.loadNpmTasks('grunt-notify');
 
-    grunt.registerTask('test', ['qunit']);
+    grunt.registerTask('test', ['connect', 'qunit']);
+    grunt.registerTask('connection', ['connect']);
 
     grunt.event.on('qunit.spawn', function (url) {
         grunt.log.ok("Running test: " + url);
