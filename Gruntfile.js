@@ -16,7 +16,7 @@ module.exports = function (grunt) {
             all: 'tests/test.html',
             options: {
                 '--web-security': 'no',
-                timeout: 80000,
+                timeout: 8000,
                 console: true
             }
         },
