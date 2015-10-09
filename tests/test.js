@@ -10,8 +10,9 @@ QUnit.test("should get a nextprot valid id", function (assert) {
         url: 'https://api.nextprot.org/entry/NX_P01308/overview.json',
         async: true,
         cache:false,
-        timeout: 10000,
+        timeout: 20000,
         data:{},
+        dataType: "json",
         success: function (data) {
             console.log(data);
             assert.equal("NX_P01308", data.entry.uniqueName, 'expect 18 properties');
@@ -21,7 +22,7 @@ QUnit.test("should get a nextprot valid id", function (assert) {
         },
         error: function(jqXHR, textStatus, ex) {
             console.log("Error spotted");
-            console.log(textStatus + "," + ex + "," + jqXHR.responseText);
+            alert(textStatus + "," + ex + "," + jqXHR.responseText);
         }
     });
 });
