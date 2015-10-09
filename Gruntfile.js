@@ -13,12 +13,12 @@ module.exports = function (grunt) {
         //    }
         //},
         qunit: {
-            all: 'tests/test.html',
             options: {
-                '--web-security': 'no',
+                '--web-security': false,
                 timeout: 8000,
                 console: true
-            }
+            },
+            all: ['tests/test.html']
         },
         watch: {
             scripts: {
@@ -31,9 +31,17 @@ module.exports = function (grunt) {
         }
     });
 
+
     grunt.loadNpmTasks('grunt-contrib-qunit');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-notify');
 
     grunt.registerTask('test', ['qunit']);
+
+    grunt.event.on('qunit.spawn', function (url) {
+        grunt.log.ok("Running test: " + url);
+    });
+    grunt.event.on('qunit.fail.load', function (url) {
+        grunt.log.ok("Running test: " + url);
+    });
 };
