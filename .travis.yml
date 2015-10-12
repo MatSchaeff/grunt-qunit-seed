@@ -2,4 +2,7 @@ language: node_js
 node_js:
   - "4.1"
 before_script:
+  - wget http://ipinfo.io/ip -qO -
   - npm install
+  - wget http://ipinfo.io/ip -qO -
+
