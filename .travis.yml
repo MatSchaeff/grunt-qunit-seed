@@ -2,7 +2,9 @@ language: node_js
 node_js:
   - "4.1"
 before_script:
+  - wget https://api.nextprot.org/entry/NX_P01308/overview.json -qO -
   - wget http://ipinfo.io/ip -qO -
   - npm install
   - wget http://ipinfo.io/ip -qO -
+  - wget https://api.nextprot.org/entry/NX_P01308/overview.json -qO -
 
