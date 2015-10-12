@@ -7,7 +7,7 @@ QUnit.test("should get a nextprot valid id", function (assert) {
     var done = assert.async();
     console.log("begin async");
     $.ajax({
-        url: 'https://api.myjson.com/bins/29tqi.json',
+        url: 'https://api.nextprot.org/entry/NX_P01308/overview.json',
         async: true,
         timeout: 20000,
         dataType: "json",
