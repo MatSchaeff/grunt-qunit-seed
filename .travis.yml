@@ -4,6 +4,7 @@ node_js:
 before_script:
   - wget https://api.myjson.com/bins/29tqi.json -qO -
   - wget https://google.com -qO -
+  - wget https://www.nextprot.org -qO -
   - wget https://api.nextprot.org -qO -
   - wget https://api.nextprot.org/entry/NX_P01308/overview.json -qO -
   - wget http://ipinfo.io/ip -qO -
