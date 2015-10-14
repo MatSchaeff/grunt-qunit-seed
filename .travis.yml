@@ -2,16 +2,5 @@ language: node_js
 node_js:
   - "4.1"
 before_script:
-  - wget https://api.myjson.com/bins/29tqi.json -qO -
-  - wget https://google.com -qO -
-  - wget https://www.diwinea.ch -qO -
-  - wget https://strauss.isb-sib.ch/bioeditor/ -qO -
-  - curl -Iv https://api.nextprot.org
-  - wget https://www.nextprot.org -qO -
-  - wget https://api.nextprot.org -qO -
-  - wget https://api.nextprot.org/entry/NX_P01308/overview.json -qO -
-  - wget http://ipinfo.io/ip -qO -
   - npm install
-  - wget http://ipinfo.io/ip -qO -
-  - wget https://api.nextprot.org/entry/NX_P01308/overview.json -qO -
 
